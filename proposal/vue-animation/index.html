@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+
+    <title>Document</title>
+
+    <style>
+      p {
+        margin: 0;
+      }
+      .container {
+        margin: 10px auto;
+        width: 800px;
+      }
+
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: #4caf50;
+        border: 1px dashed black;
+        margin: 0px;
+      }
+
+      .appended, .row-appended .box {
+        border-radius: 100%;
+        background-color: #cddc39;
+        border: 2px dotted #e8e8e8;
+      }
+
+      .row-item {
+        display: block;
+        margin-right: 0px;
+        transition: all 1s;
+      }
+
+      .row-enter,
+      .row-leave-to
+        {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .list-item {
+        display: inline-block;
+        margin-right: 5px;
+        transition: all 1s;
+      }
+
+      .list-enter,
+      .list-leave-to
+        {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="app">
+      <div class="container"
+           @click="toggle()">
+
+
+        <transition-group name="row"
+                          tag="div">
+          <div v-for="(r, j) in m"
+               class="row row-item"
+               :key="j"
+               v-if="show || j % 2 == 1"
+               :class="{'row-appended': j % 2 == 0}"
+               v-show="j != 0">
+            <transition-group name="list"
+                              tag="p">
+              <span v-for="(p, i) in r"
+                    :key="i"
+                    v-if="show || i % 2 == 1"
+                    :class="{appended: i % 2 == 0}"
+                    v-show="i != 0"
+                    class="box list-item">
+              </span>
+
+            </transition-group>
+
+          </div>
+        </transition-group>
+      </div>
+
+    </div>
+
+
+    <script>
+      let app = new Vue({
+        el: '#app',
+        data: {
+          m: [],
+          width: 10,
+          height: 10,
+          show: false,
+        },
+        created() {
+          for (let i = 0; i < this.height; i++) {
+            this.m[i] = [];
+            for (let j = 0; j < this.width; j++)
+              this.m[i][j] = 'original'
+          }
+        },
+        methods: {
+          toggle() {
+            this.show = !this.show;
+          }
+        }
+      })
+
+    </script>
+
+  </body>
+
+
+</html>
