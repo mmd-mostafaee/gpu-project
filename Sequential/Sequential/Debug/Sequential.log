@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\mmd\desktop\university\term\7\gpu\project\sequential\sequential\source.cpp(102): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\mmd\desktop\university\term\7\gpu\project\sequential\sequential\source.cpp(111): warning C4101: 'jj': unreferenced local variable
+c:\users\mmd\desktop\university\term\7\gpu\project\sequential\sequential\source.cpp(111): warning C4101: 'j': unreferenced local variable
+c:\users\mmd\desktop\university\term\7\gpu\project\sequential\sequential\source.cpp(111): warning C4101: 'ii': unreferenced local variable
+  Sequential.vcxproj -> C:\Users\MMD\Desktop\University\Term\7\gpu\project\Sequential\Debug\Sequential.exe
