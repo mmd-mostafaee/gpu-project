@@ -1,0 +1,13 @@
+﻿  Compiling CUDA source file kernel.cu...
+  
+  C:\Users\MMD\Desktop\University\Term\7\gpu\project\cuda\cuda>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin\nvcc.exe" -gencode=arch=compute_35,code=\"sm_35,compute_35\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc140.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "C:\Users\MMD\Desktop\University\Term\7\gpu\project\cuda\cuda\kernel.cu" 
+C:/Users/MMD/Desktop/University/Term/7/gpu/project/cuda/cuda/kernel.cu(159): warning : variable "zoomed_image_h" is used before its value is set
+C:/Users/MMD/Desktop/University/Term/7/gpu/project/cuda/cuda/kernel.cu(159): warning : variable "zoomed_image_h" is used before its value is set
+  kernel.cu
+  math_functions.h is an internal header file and must not be used directly.  This file will be removed in a future CUDA release.  Please use cuda_runtime_api.h or cuda_runtime.h instead.
+c:\users\mmd\desktop\university\term\7\gpu\project\cuda\cuda\Header.h(78): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 3 has type 'int *'
+c:\users\mmd\desktop\university\term\7\gpu\project\cuda\cuda\Header.h(78): warning C4313: 'printf': '%d' in format string conflicts with argument 3 of type 'int *'
+c:\users\mmd\desktop\university\term\7\gpu\project\cuda\cuda\Header.h(78): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 4 has type 'int *'
+c:\users\mmd\desktop\university\term\7\gpu\project\cuda\cuda\Header.h(78): warning C4313: 'printf': '%d' in format string conflicts with argument 4 of type 'int *'
+c:\users\mmd\desktop\university\term\7\gpu\project\cuda\cuda\kernel.cu(159): warning C4700: uninitialized local variable 'zoomed_image_h' used
+  cuda.vcxproj -> C:\Users\MMD\Desktop\University\Term\7\gpu\project\cuda\x64\Debug\cuda.exe
